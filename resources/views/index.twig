@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Vagas Por E-mail - Ofertas de emprego toda hora</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Ricardo Montania Prado de Campos">
+	<meta name="description" content="Ofertas de emprego toda hora"/>
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="{{ base_url() }}/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900">
+    <link rel="stylesheet" href="{{ base_url() }}/guest/css/reset.css">
+	<link rel="stylesheet" href="{{ base_url() }}/guest/css/main.css">
+    <link rel="stylesheet" href="{{ base_url() }}/guest/css/spinners.css">
+    <link rel="stylesheet" href="{{ base_url() }}/guest/css/style.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ base_url() }}/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ base_url() }}/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url() }}/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ base_url() }}/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ base_url() }}/favicon/safari-pinned-tab.svg" color="#55efc4">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#55efc4">
+
+    <meta property="og:image:width" content="1027">
+    <meta property="og:image:height" content="538">
+    <meta property="og:description" content="A sua melhor ferramenta na busca por vagas de emprego">
+    <meta property="og:title" content="Fast Vagas">
+    <meta property="og:url" content="https://www.fastvagas.com.br">
+    <meta property="og:image" content="https://www.fastvagas.com.br/faceog/og-image.jpg">
+</head>
+<body>
+    <!-- Header top -->
+	<section class="billboard light">
+		<header class="wrapper light">
+			<a href="{{ path_for('index') }}">
+                <img class="logo" src="{{ base_url() }}/user/img/fast_logo2a.png" width="56" alt="Logo Fast Vagas"/>
+                <span class="logo-index">Fast Vagas</span>
+            </a>
+			<nav>
+				<ul>
+					<li><a href="#" id="contato-header">Contato</a></li>
+					<li><a href="#" data-bind="click: form_cadastro.mostrar_modal">Criar conta</a></li>
+					<li><a href="#" data-bind="click: form_login.mostrar_modal">Login</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="caption light animated wow fadeInDown clearfix">
+			<h1>A sua melhor ferramenta na busca por vagas de emprego</h1>
+			<p>Já imaginou ter um serviço de hora em hora que busca os anúncos de vagas,
+            filtra as do seu interesse, e te manda o resumo com o link?<br>
+            Então cadastre-se e conheça, free por tempo limitado!</p>
+			<hr>
+		</div>
+		<div class="shadow"></div>
+	</section>
+
+    <!-- Serviços -->
+	<section class="services wrapper">
+		<ul class="clearfix">
+			<li class="animated wow fadeInDown">
+				<img class="icon" src="guest/img/icon1.png" alt=""/>
+				
+				<h2>Eficiência</h2>
+				<p>Conte com nossos serviços para buscar vagas e dobre sua eficiência!</p>
+			</li>
+			<li class="animated wow fadeInDown"  data-wow-delay=".2s">
+				<img class="icon" src="guest/img/icon2.png" alt=""/>
+				
+				<h2>Seus filtros</h2>
+				<p>É você quem determina quantas e quais palavras vai usar como termo de busca.</p>
+			</li>
+			<li class="animated wow fadeInDown"  data-wow-delay=".4s">
+				<img class="icon" src="guest/img/icon3.png" alt=""/>
+				
+				<h2>Temporariamente free</h2>
+				<p>Aproveite a nossa estréia e celebre junto recebendo todas as funções liberadas sem custo.</p>
+			</li>
+		</ul>
+	</section>
+
+    <!-- Contato -->
+	<section class="blog_posts" id="contato">
+		<div class="wrapper">
+			<div class="title animated wow fadeInDown">
+				<h2>Contato</h2>
+				<h3>Quer saber mais? Escreva-nos agora mesmo!</h3>
+				<hr class="separator"/>
+                <br>
+			</div>
+
+			<div class="clearfix"></div>
+            
+            <div class="animated wow fadeInDown">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Preencha os campos e clique em Enviar!</h4><br>
+                        <form method="POST" id="form_contato" class="form" data-bind="submit: submit_contato">
+                            <fieldset data-bind="enable: !form_contato.aguarde()">
+                            <div class="form-group">
+                                <label for="nome_contato">Nome *</label>
+                                <input class="form-control" id="nome_contato" minlength="3" name="nome_contato" type="text" required maxlength="30" data-bind="value: form_contato.nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="email_contato">E-mail *</label>
+                                <input class="form-control" id="email_contato" name="email_contato" type="email" required maxlength="100" data-bind="value: form_contato.email">
+                            </div>
+                            <div class="form-group">
+                                <label for="assunto_contato">Assunto *</label>
+                                <input class="form-control" id="assunto_contato" name="assunto_contato" type="text" required maxlength="20" data-bind="value: form_contato.assunto">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem_contato">Mensagem *</label>
+                                <textarea rows="5" id="mensagem_contato" name="mensagem_contato" class="form-control" required data-bind="value: form_contato.mensagem"></textarea>
+                            </div>
+                            <span data-bind="visible: form_contato.aguarde">
+                                <i class="fa fa-spinner fa-pulse"></i> Aguarde...
+                            </span>
+                            <button type="submit" class="btn btn-primary" data-bind="css: {'readonly': !form_contato.valido() }">Enviar</button>
+                            <button type="button" class="btn btn-secondary" data-bind="click: limpar_form_contato">Limpar</button>
+                        </form>
+                        <div class="alert alert-danger" style="margin-top: 20px" role="alert" data-bind="visible: form_contato.erro(), text: form_contato.erro()"></div>
+                        <div class="alert alert-success" style="margin-top: 20px" role="alert" data-bind="visible: form_contato.sucesso(), text: form_contato.sucesso()"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>Ou se preferir, utilize um dos links a seguir</h4>
+                        <ul class="ul-contato">
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <a href="tel:47991699982">(47) 99169-9982</a> (Claro)
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <a href="mailto:ricardompcampos@gmail.com">ricardompcampos@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/profile.php?id=100028102323218" target="_blank">Facebook</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-linkedin"></i>
+                                <a href="https://www.linkedin.com/in/montania/" target="_blank">Linkedin</a>
+                            </li>
+                        </ul>
+                        
+                        <h4>Onde estamos localizados!</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.3838264330734!2d-48.80926608533465!3d-26.281654383403417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb1f3d47d2def%3A0x586e4b6ce9726361!2sR.+Maracuj%C3%A1%2C+510+-+Comasa%2C+Joinville+-+SC%2C+89228-070!5e0!3m2!1spt-BR!2sbr!4v1550063877837" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+
+    <!-- Footer -->
+	<footer>
+		<div class="wrapper">
+			<div class="rights">
+				<img src="{{ base_url() }}/user/img/admin-text.png" alt="Logo Fast Vagas" class="footer_logo"/>
+				<p>2019 © Fast Vagas. Todos os direitos reservados - Template por <a href="http://pixelhint.com" target="_blank">Pixelhint.com</a></p>
+			</div>
+
+			<nav>
+				<ul>
+					<li><a href="#" id="to-top">Início</a></li>
+					<li><a href="#" id="contato-footer">Contato</a></li>
+					<li><a href="#" class="modal-login">Login</a></li>
+				</ul>
+			</nav>
+		</div>		
+	</footer>
+
+    <!-- modal_cadastro -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_label" data-bind="modal: form_cadastro.mostrar, backdrop: 'static', keyboard: 'false'">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_cadastro_label">Criar conta de acesso ao sistema Vagas Por E-mail</h4>
+                </div>
+                <form method="POST" id="form_cadastro" data-bind="submit: submit_cadastro">
+                    <fieldset data-bind="enable: !form_cadastro.aguarde()">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="nome_cadastro">Nome *</label>
+                                        <input type="text" id="nome_cadastro" name="nome_cadastro" class="form-control" maxlength="10" required data-bind="value: form_cadastro.nome">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="sobrenome_cadastro">Sobrenome *</label>
+                                        <input type="text" id="sobrenome_cadastro" name="sobrenome_cadastro" class="form-control" required maxlength="40" data-bind="value: form_cadastro.sobrenome">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email_cadastro">E-mail *</label>
+                                        <input type="email" id="email_cadastro" name="email_cadastro" class="form-control" required maxlength="50" data-bind="value: form_cadastro.email, event: {change: email_cadastro_changed}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="senha_cadastro">Senha *</label>
+                                        <div class="input-group">
+                                            <input id="senha_cadastro" class="form-control" required data-bind="value: form_cadastro.senha, attr: {type: form_cadastro.tipoPW()}">
+                                            <span class="input-group-btn">
+                                                <button tabindex="-1" class="btn btn-default" type="button" data-bind="click: form_cadastro.togglePassword, attr: {title: form_cadastro.titlePW()}">
+                                                    <i data-bind="css: {'fa-eye': form_cadastro.tipoPW() == 'text', 'fa-eye-slash': form_cadastro.tipoPW() == 'password'}" class="fa"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="uf_cadastro">Estado *</label>
+                                        <select id="uf_cadastro" name="uf_cadastro" class="form-control" required data-bind="value: form_cadastro.cod_uf, options: uf_list, optionsValue: 'valor', optionsText: 'texto', event: {change: uf_cadastro_changed}">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <label for="cidade_cadastro">Cidade *</label>
+                                        <select id="cidade_cadastro" name="cidade_cadastro" class="form-control" required data-bind="value: form_cadastro.cod_cidade, options: cidade_list, optionsValue: 'valor', optionsText: 'texto'">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <span data-bind="visible: form_cadastro.aguarde">
+                                <i class="fa fa-spinner fa-pulse"></i> Aguarde...
+                            </span>
+                            <div class="alert alert-danger" style="margin-top: 20px" role="alert" data-bind="visible: form_cadastro.erro(), text: form_cadastro.erro()"></div>
+                            <div class="alert alert-success" style="margin-top: 20px" role="alert" data-bind="visible: form_cadastro.sucesso(), text: form_cadastro.sucesso()"></div>
+
+                            <a href="#" data-bind="html: form_cadastro.textoBotaoAdicional, visible: form_cadastro.textoBotaoAdicional() != '', click: solicitarPortal"></a>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" data-bind="css: {'readonly': !form_cadastro.valido() }" value="Criar conta">
+                            <input type="button" class="btn btn-secondary" value="Cancelar" data-bind="click: cancelar_form_cadastro">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- modal login -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_login_label" data-bind="modal: form_login.mostrar, backdrop: 'static', keyboard: 'false'">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLoginLabel">Acessar sua conta</h4>
+                </div>
+                <form method="POST" id="form_login" data-bind="submit: submit_login">
+                    <fieldset data-bind="enable: !form_login.aguarde()">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="email_login">E-mail *</label>
+                                        <input type="email" id="email_login" name="email_login" class="form-control" required data-bind="value: form_login.email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="senha_login">Senha *</label>
+                                        <div class="input-group">
+                                            <input id="senha_login" name="senha_login" class="form-control" required data-bind="value: form_login.senha, attr: {type: form_login.tipoPW()}">
+                                            <span class="input-group-btn">
+                                                <button tabindex="-1" class="btn btn-default" type="button" data-bind="click: form_login.togglePassword, attr: {title: form_login.titlePW()}">
+                                                    <i data-bind="css: {'fa-eye': form_login.tipoPW() == 'text', 'fa-eye-slash': form_login.tipoPW() == 'password'}" class="fa"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span data-bind="visible: form_login.aguarde">
+                                <i class="fa fa-spinner fa-pulse"></i> Aguarde...
+                            </span>
+                            <div class="alert alert-danger" style="margin-top: 20px" role="alert" data-bind="visible: form_login.erro(), text: form_login.erro()"></div>
+                            <div class="alert alert-success" style="margin-top: 20px" role="alert" data-bind="visible: form_login.sucesso(), text: form_login.sucesso()"></div>
+
+                            <a href="#" data-bind="text: form_login.textoBotaoAdicional, visible: form_login.textoBotaoAdicional() != '', click: esqueceu_a_senha"></a>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="Acessar" data-bind="css: {'readonly': !form_login.valido() }">
+                            <input type="button" class="btn btn-secondary" value="Cancelar" data-bind="click: cancelar_form_login">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ base_url() }}/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/node_modules/knockout/build/output/knockout-latest.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/node_modules/wowjs/dist/wow.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/node_modules/jquery-validation/dist/localization/messages_pt_BR.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/guest/js/main.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/user/js/validation.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/ko/handlers.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/ko/forms.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/ko/index.js"></script>
+</body>
+</html>

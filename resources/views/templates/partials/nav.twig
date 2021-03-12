@@ -1,0 +1,74 @@
+<nav class="navbar navbar-default navbar-static-top m-b-0">
+    <div class="navbar-header">
+        <div class="top-left-part">
+            <a class="logo" href="{{ path_for('home') }}">
+                <!-- Logo icon image, you can use font-icon also -->
+                <b>
+                    <!--This is dark logo icon-->
+                    <img src="{{ base_url() }}/user/img/admin-logo.png" alt="home" class="dark-logo" />
+                    <!--This is light logo icon-->
+                    <img src="{{ base_url() }}/user/img/admin-logo-dark.png" alt="home" class="light-logo" />
+                </b>
+                <!-- Logo text image you can use text also -->
+                <span class="hidden-xs">
+                    <!--This is dark logo text-->
+                    <img src="{{ base_url() }}/user/img/admin-text.png" alt="home" class="dark-logo" />
+                    
+                    <!--This is light logo text-->
+                    <img src="{{ base_url() }}/user/img/admin-text-dark.png" alt="home" class="light-logo" />
+                </span>
+            </a>
+        </div>
+        <!-- /Logo -->
+        <ul class="nav navbar-top-links navbar-right pull-right">
+            <li>
+                <a class="profile-pic" href="{{ path_for('profile') }}">
+                    <img src="{{ base_url() }}/user/img/users/user.png" alt="Imagem do usuário" width="36" class="img-circle">
+                    <b class="hidden-xs">{{ auth.pessoa.nome }}</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav slimscrollsidebar">
+        <div class="sidebar-head">
+            <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
+        </div>
+        <ul class="nav" id="side-menu">
+            <li style="padding: 70px 0 0;">
+                <a href="{{ path_for('home') }}" class="waves-effect"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Home</a>
+            </li>
+            {% if auth.pessoa.is_admin is same as('N') %}
+            <li>
+                <a href="{{ path_for('termos') }}" class="waves-effect"><i class="fa fa-list fa-fw" aria-hidden="true"></i>Termos de busca</a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="{{ path_for('profile') }}" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Minha conta</a>
+            </li>
+            {% if auth.pessoa.is_admin is same as('S') %}
+            <li>
+                <a href="{{ path_for('adm-pessoas') }}" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i>Adm-Pessoas</a>
+            </li>
+            <li>
+                <a href="{{ path_for('adm-portais') }}" class="waves-effect"><i class="fa fa-certificate fa-fw" aria-hidden="true"></i>Adm-Portais</a>
+            </li>
+            <li>
+                <a href="{{ path_for('adm-vagas') }}" class="waves-effect"><i class="fa fa-briefcase fa-fw" aria-hidden="true"></i>Adm-Vagas</a>
+            </li>
+            <li>
+                <a href="{{ path_for('adm-historico') }}" class="waves-effect"><i class="fa fa-history fa-fw" aria-hidden="true"></i>Adm-Histórico</a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="{{ path_for('sair') }}" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a>
+            </li>
+        </ul>
+        <!--
+        <div class="center p-20">
+            <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger btn-block waves-effect waves-light">Upgrade to Pro</a>
+        </div>
+        -->
+    </div>
+</div>

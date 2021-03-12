@@ -1,0 +1,21 @@
+.btn.btn-lg.btn-default.readonly {
+    background: #e4e7ea;
+    border: 1px solid #e4e7ea;
+    opacity: .65;
+}
+
+.mt-xs {
+    margin-top: 4px!important;
+}
+
+.mt-sm {
+    margin-top: 8px!important;
+}
+
+.mt-md {
+    margin-top: 16px!important;
+}
+
+.mt-lg {
+    margin-top: 24px!important;
+}

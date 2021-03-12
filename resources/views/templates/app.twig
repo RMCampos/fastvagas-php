@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Ricardo Montania Prado de Campos">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url() }}/user/img/favicon.png">
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/metismenu/dist/metisMenu.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/morris.js/morris.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="{{ base_url() }}/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/guest/css/style.css" >
+    <link rel="stylesheet" href="{{ base_url() }}/user/css/default.css" id="theme">
+    <link rel="stylesheet" href="{{ base_url() }}/user/css/app.css">
+    {% if auth.pessoa.is_admin is same as('S') %}
+    <link rel="stylesheet" href="{{ base_url() }}/datatables/datatables.css">
+    {% endif %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ base_url() }}/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ base_url() }}/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url() }}/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ base_url() }}/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ base_url() }}/favicon/safari-pinned-tab.svg" color="#ff916e">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ff916e">
+
+    <meta property="og:image:height" content="520">
+    <meta property="og:image:width" content="993">
+    <meta property="og:description" content="Ofertas de emprego a toda hora!">
+    <meta property="og:title" content="Vagas Por E-mail">
+    <meta property="og:url" content="http://www.vagasporemail.com.br">
+    <meta property="og:image" content="http://www.vagasporemail/faceog/og-image.jpg">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header">
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <div id="wrapper">
+        {% include 'templates/partials/nav.twig' %}
+        <div id="page-wrapper">
+            {% block content %}{% endblock %}
+            {% include 'templates/partials/footer.twig' %}
+        </div>
+    </div>
+
+    <script src="{{ base_url() }}/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/knockout/build/output/knockout-latest.js"></script>
+    <script src="{{ base_url() }}/node_modules/bootbox/dist/bootbox.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/metismenu/dist/metisMenu.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{ base_url() }}/user/js/waves.js"></script>
+    <script src="{{ base_url() }}/node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/chartist/dist/chartist.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{ base_url() }}/node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script src="{{ base_url() }}/user/js/custom.js"></script>
+
+    <script src="{{ base_url() }}/ko/handlers.js"></script>
+    <script src="{{ base_url() }}/ko/forms.js"></script>
+    <script src="{{ base_url() }}/ko/home.js"></script>
+    <script src="{{ base_url() }}/ko/minha-conta.js"></script>
+    <script src="{{ base_url() }}/ko/termos.js"></script>
+
+    {% if auth.pessoa.is_admin is same as('S') %}
+    <script src="{{ base_url() }}/datatables/datatables.min.js"></script>
+    <script src="{{ base_url() }}/ko/adm-pessoas.js"></script>
+    <script src="{{ base_url() }}/ko/adm-portais.js"></script>
+    <script src="{{ base_url() }}/ko/adm-vagas.js"></script>
+    <script src="{{ base_url() }}/ko/adm-historico.js"></script>
+    {% endif %}
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ base_url() }}/user/js/dashboard1.js"></script>
+</body>
+</html>

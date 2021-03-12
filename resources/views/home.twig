@@ -1,0 +1,197 @@
+{% extends 'templates/app.twig' %}
+
+{% block title %}
+    <title>HOME | Vagas Por E-mail</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="home">
+    <div class="row bg-title">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4 class="page-title">Bem vindo {{ auth.pessoa.nome }}</h4>
+                </div>
+                <div class="col-sm-6 mt-xs">
+                    <div class="pull-right">
+                        <small>Último acesso em 29/03/2019 ás 08:27</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- primeiro acesso -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-info" role="alert">
+                <p>&#x1F60D &#x1F60D &#x1F60D </p>
+                <p><span style="font-weight: 400">Yaaiiiiii</span> Obrigado por escolher o Vagas Por E-mail</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h4>Esta é sua página inicial &#x1F603</h4>
+                    <p class="mt-md">
+                        Aqui é onde você confere o resumo das últimas vagas!
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- fim primeiro acesso -->
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Vagas de ontem</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">6</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Vagas de hoje</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash2"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">8</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Última hora</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash3"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">1</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title">Últimas vagas selecionadas</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>TÍTULO</th>
+                                <th>ORIGEM</th>
+                                <th>LINK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="txt-oflo">Secretária pessoal</td>
+                                <td>Joinville Vagas</td>
+                                <!--<td><span class="text-info">$1250</span></td>-->
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="txt-oflo">Comprador</td>
+                                <td>Indeed</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="txt-oflo">Recepcionista</td>
+                                <td>Joinville Vagas</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="txt-oflo">Atendente comercial</td>
+                                <td>SINE Joinville</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="txt-oflo">Vendedor interno</td>
+                                <td>Joinville Vagas</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td class="txt-oflo">Vendedor externo</td>
+                                <td>Joinville Vagas</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td class="txt-oflo">Estoquista (H/M)</td>
+                                <td>SINE Joinville</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title">Top vagas em Joinville-SC</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>TÍTULO</th>
+                                <th>ORIGEM</th>
+                                <th>HITS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="txt-oflo">Secretária pessoal</td>
+                                <td>Joinville Vagas</td>
+                                <!--<td><span class="text-info">$1250</span></td>-->
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td class="txt-oflo">Comprador</td>
+                                <td>Indeed</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td class="txt-oflo">Recepcionista</td>
+                                <td>Joinville Vagas</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td class="txt-oflo">Atendente comercial</td>
+                                <td>SINE Joinville</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td class="txt-oflo">Vendedor interno</td>
+                                <td>Joinville Vagas</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td class="txt-oflo">Vendedor externo</td>
+                                <td>Joinville Vagas</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td class="txt-oflo">Estoquista (H/M)</td>
+                                <td>SINE Joinville</td>
+                                <td><a href="#" target="_blank">Ver</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

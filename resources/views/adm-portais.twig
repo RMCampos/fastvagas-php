@@ -1,0 +1,49 @@
+{% extends 'templates/app.twig' %}
+
+{% block title %}
+    <title>PORTAIS | Vagas por E-mail</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="adm-portais">
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Portais</h4> </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="{{ path_for('home') }}">Home</a></li>
+                <li class="active">Portais</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-lg btn-primary">Adicionar</button>
+                        <button type="button" class="btn btn-lg btn-default" data-bind="click: alterar, css: {'readonly': selectedIndex() < 0}">Alterar</button>
+                        <button type="button" class="btn btn-lg btn-default" data-bind="click: excluir, css: {'readonly': selectedIndex() < 0}">Excluir</button>
+                        <br>
+                        <br>
+                        
+                        <table class="table table-striped table-bordered table-hover" id="tblPortais" width="100%">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Cód. cidade</th>
+                                    <th scope="col">Nome cidade</th>
+                                    <th scope="col">Cód. UF</th>
+                                    <th scope="col">Nome UF</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
